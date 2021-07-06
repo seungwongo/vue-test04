@@ -23,6 +23,10 @@ import UserList from "../views/UserList.vue";
 import Computed from "../views/Computed.vue";
 import Watch from "../views/Watch.vue";
 import Restaurant from "../views/Restaurant.vue";
+import NestedComponent from "../views/NestedComponent.vue";
+import NestedComponent2 from "../views/NestedComponent2.vue";
+import NestedComponent3 from "../views/NestedComponent3.vue";
+import NestedComponent4 from "../views/NestedComponent4.vue";
 
 
 const routes = [{
@@ -129,6 +133,26 @@ const routes = [{
     path: "/restaurant",
     name: "Restaurant",
     component: Restaurant,
+  },
+  {
+    path: "/nested",
+    name: "NestedComponent",
+    component: NestedComponent,
+  },
+  {
+    path: "/nested2",
+    name: "NestedComponent2",
+    component: NestedComponent2,
+  },
+  {
+    path: "/nested3",
+    name: "NestedComponent3",
+    component: NestedComponent3,
+  },
+  {
+    path: "/nested4",
+    name: "NestedComponent4",
+    component: NestedComponent4,
   },
   // {
   //   path: "/about",
