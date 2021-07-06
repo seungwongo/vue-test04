@@ -8,7 +8,7 @@
       </thead>
       <tbody>
         <tr :key="i" v-for="(tr, i) in body">
-          <td :key="j" v-for="(td, j) in tr">{{ td }}</td>
+          <td :key="j" v-for="(d, j) in tr">{{ d }}</td>
         </tr>
       </tbody>
     </table>
