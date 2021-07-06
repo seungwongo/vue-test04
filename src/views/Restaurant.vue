@@ -123,12 +123,12 @@
       </div>
     </div>
     <div style="padding: 10px; text-align: center">
-      <button class="btn-cal" onclick="calculateAmount();">
-        결제 금액 계산
-      </button>
+      <button class="btn-cal" @click="calculateAmount">결제 금액 계산</button>
     </div>
-    <div id="divRealTotal" style="display: none">
-      <h2>최종 결재 금액: <strong id="realTotal"></strong></h2>
+    <div v-show="realTotal > 0">
+      <h2>
+        최종 결재 금액: <strong>{{ realTotal }}원</strong>
+      </h2>
     </div>
   </div>
 </template>
@@ -429,6 +429,7 @@ export default {
       selectedPoint: 0,
       selectedCashbag: 0,
       selectedCouponId: "",
+      realTotal: 0,
     };
   },
   computed: {
@@ -462,7 +463,58 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
-    calculateAmount() {},
+    calculateAmount() {
+      let realTotal = this.total;
+      let couponDiscount = 0;
+      if (this.selectedCouponId != "") {
+        let coupon = this.coupons.filter(
+          (c) => c.couponId == this.selectedCouponId
+        )[0];
+        if (coupon.doubleDiscount) {
+          if (coupon.discountType == "%") {
+            couponDiscount = this.total * (coupon.discount / 100);
+          } else {
+            couponDiscount = coupon.discount;
+          }
+
+          realTotal -= couponDiscount;
+          realTotal -= this.getCardDiscount(realTotal);
+        } else {
+          let cardDiscount = this.getCardDiscount(realTotal);
+          if (cardDiscount >= couponDiscount) {
+            realTotal -= cardDiscount;
+          } else {
+            realTotal -= couponDiscount;
+          }
+        }
+      } else {
+        realTotal -= this.getCardDiscount(realTotal);
+      }
+
+      this.realTotal = realTotal;
+    },
+    getCardDiscount(amount) {
+      if (
+        amount == 0 ||
+        (this.selectedCredit == 0 &&
+          this.selectedTelecom == 0 &&
+          this.selectedPoint == 0 &&
+          this.selectedCashbag == 0)
+      ) {
+        return 0;
+      }
+
+      return (
+        amount *
+        (Math.max(
+          this.selectedCredit,
+          this.selectedTelecom,
+          this.selectedPoint,
+          this.selectedCashbag
+        ) /
+          100)
+      );
+    },
   },
 };
 </script>
