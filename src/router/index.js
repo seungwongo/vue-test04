@@ -28,6 +28,7 @@ import NestedComponent2 from "../views/NestedComponent2.vue";
 import NestedComponent3 from "../views/NestedComponent3.vue";
 import NestedComponent4 from "../views/NestedComponent4.vue";
 import NestedComponent5 from "../views/NestedComponent5.vue";
+import Parent from "../views/Parent.vue";
 
 
 const routes = [{
@@ -159,6 +160,11 @@ const routes = [{
     path: "/nested5",
     name: "NestedComponent5",
     component: NestedComponent5,
+  },
+  {
+    path: "/parent",
+    name: "Parent",
+    component: Parent,
   },
   // {
   //   path: "/about",
