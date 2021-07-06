@@ -16,6 +16,7 @@ import DataBindingClass2 from "../views/DataBindingClass2.vue";
 import DataBindingStyle from "../views/DataBindingStyle.vue";
 import DataBindingList from "../views/DataBindingList.vue";
 import DataBindingList2 from "../views/DataBindingList2.vue";
+import DataBindingList3 from "../views/DataBindingList3.vue";
 import RenderingIf from "../views/RenderingIf.vue";
 import EventBinding from "../views/EventBinding.vue";
 import Vending from "../views/Vending.vue";
@@ -29,6 +30,9 @@ import NestedComponent3 from "../views/NestedComponent3.vue";
 import NestedComponent4 from "../views/NestedComponent4.vue";
 import NestedComponent5 from "../views/NestedComponent5.vue";
 import Parent from "../views/Parent.vue";
+import Parent2 from "../views/Parent2.vue";
+import SlotUseModalLayout from "../views/SlotUseModalLayout.vue";
+import ProvideInject from "../views/ProvideInject.vue";
 
 
 const routes = [{
@@ -102,6 +106,11 @@ const routes = [{
     component: DataBindingList2,
   },
   {
+    path: "/databindinglist3",
+    name: "DataBindingList3",
+    component: DataBindingList3,
+  },
+  {
     path: "/renderingif",
     name: "RenderingIf",
     component: RenderingIf,
@@ -165,6 +174,21 @@ const routes = [{
     path: "/parent",
     name: "Parent",
     component: Parent,
+  },
+  {
+    path: "/parent2",
+    name: "Parent2",
+    component: Parent2,
+  },
+  {
+    path: "/slot",
+    name: "SlotUseModalLayout",
+    component: SlotUseModalLayout,
+  },
+  {
+    path: "/provideinject",
+    name: "ProvideInject",
+    component: ProvideInject,
   },
   // {
   //   path: "/about",

@@ -27,6 +27,7 @@
         overflow-y: auto;
         border: 2px solid #222;
       "
+      ref="msgArea"
     >
       <p :key="i" v-for="(msg, i) in messsageList">{{ msg }}</p>
     </div>
@@ -91,6 +92,9 @@ export default {
   },
   setup() {},
   created() {},
+  updated() {
+    this.$refs.msgArea.scrollTop = this.$refs.msgArea.scrollHeight;
+  },
   mounted() {},
   unmounted() {},
   methods: {
