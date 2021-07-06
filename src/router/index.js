@@ -20,6 +20,9 @@ import RenderingIf from "../views/RenderingIf.vue";
 import EventBinding from "../views/EventBinding.vue";
 import Vending from "../views/Vending.vue";
 import UserList from "../views/UserList.vue";
+import Computed from "../views/Computed.vue";
+import Watch from "../views/Watch.vue";
+import Restaurant from "../views/Restaurant.vue";
 
 
 const routes = [{
@@ -111,6 +114,21 @@ const routes = [{
     path: "/userlist",
     name: "UserList",
     component: UserList,
+  },
+  {
+    path: "/computed",
+    name: "Computed",
+    component: Computed,
+  },
+  {
+    path: "/watch",
+    name: "Watch",
+    component: Watch,
+  },
+  {
+    path: "/restaurant",
+    name: "Restaurant",
+    component: Restaurant,
   },
   // {
   //   path: "/about",
