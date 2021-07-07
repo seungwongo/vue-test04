@@ -33,6 +33,10 @@ import Parent from "../views/Parent.vue";
 import Parent2 from "../views/Parent2.vue";
 import SlotUseModalLayout from "../views/SlotUseModalLayout.vue";
 import ProvideInject from "../views/ProvideInject.vue";
+import LoginAccess from "../views/LoginAccess.vue";
+import Login from "../views/Login.vue";
+import KakaoLogin from "../views/KakaoLogin.vue";
+import StoreAccess from "../views/StoreAccess.vue";
 
 
 const routes = [{
@@ -189,6 +193,26 @@ const routes = [{
     path: "/provideinject",
     name: "ProvideInject",
     component: ProvideInject,
+  },
+  {
+    path: "/loginaccess",
+    name: "LoginAccess",
+    component: LoginAccess,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
+  {
+    path: "/kakaologin",
+    name: "KakaoLogin",
+    component: KakaoLogin,
+  },
+  {
+    path: "/storeaccess",
+    name: "StoreAccess",
+    component: StoreAccess,
   },
   // {
   //   path: "/about",
