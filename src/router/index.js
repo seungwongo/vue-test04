@@ -1,6 +1,7 @@
 import {
   createRouter,
-  createWebHashHistory
+  createWebHashHistory,
+  createWebHistory
 } from "vue-router";
 import Home from "../views/Home.vue";
 import DataBindingHtml from "../views/DataBindingHtml.vue";
@@ -36,6 +37,8 @@ import ProvideInject from "../views/ProvideInject.vue";
 import LoginAccess from "../views/LoginAccess.vue";
 import Login from "../views/Login.vue";
 import KakaoLogin from "../views/KakaoLogin.vue";
+import KakaoLogin2 from "../views/KakaoLogin2.vue";
+import NaverLogin from "../views/NaverLogin.vue";
 import StoreAccess from "../views/StoreAccess.vue";
 
 
@@ -210,6 +213,16 @@ const routes = [{
     component: KakaoLogin,
   },
   {
+    path: "/kakaologin2",
+    name: "KakaoLogin2",
+    component: KakaoLogin2,
+  },
+  {
+    path: "/naverlogin",
+    name: "NaverLogin",
+    component: NaverLogin,
+  },
+  {
     path: "/storeaccess",
     name: "StoreAccess",
     component: StoreAccess,
@@ -246,7 +259,8 @@ const routes = [{
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  // history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
