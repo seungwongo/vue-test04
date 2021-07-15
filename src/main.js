@@ -7,6 +7,10 @@ import ApiMixin from "./api";
 import LoginMixin from "./logincheck";
 import store from "./store/store";
 
+import 'bootstrap';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
+
 
 createApp(App).use(router).use(store).mixin(ApiMixin).mixin(LoginMixin).mount("#app");
 

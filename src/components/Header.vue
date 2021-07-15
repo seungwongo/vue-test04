@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="login">로그인</button
-    ><button @click="logout">로그아웃</button>
+    <button class="btn btn-primary" @click="login">로그인</button
+    ><button class="btn btn-danger" @click="logout">로그아웃</button>
   </div>
 </template>
 <script>

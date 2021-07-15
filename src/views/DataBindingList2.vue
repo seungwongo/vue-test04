@@ -80,7 +80,7 @@ export default {
           // );
 
           var users2 = [];
-          for (var user of userList) {
+          for (var user of users) {
             if (
               user.gender == this.selectedGender &&
               user.name.toLowerCase.indexOf(this.searchName.toLowerCase()) > -1

@@ -1,6 +1,5 @@
 import {
   createRouter,
-  createWebHashHistory,
   createWebHistory
 } from "vue-router";
 import Home from "../views/Home.vue";
@@ -40,6 +39,7 @@ import KakaoLogin from "../views/KakaoLogin.vue";
 import KakaoLogin2 from "../views/KakaoLogin2.vue";
 import NaverLogin from "../views/NaverLogin.vue";
 import StoreAccess from "../views/StoreAccess.vue";
+import BootstrapTest from "../views/BootstrapTest.vue";
 
 
 const routes = [{
@@ -226,6 +226,11 @@ const routes = [{
     path: "/storeaccess",
     name: "StoreAccess",
     component: StoreAccess,
+  },
+  {
+    path: "/bootstraptest",
+    name: "BootstrapTest",
+    component: BootstrapTest,
   },
   // {
   //   path: "/about",
